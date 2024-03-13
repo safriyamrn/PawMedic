@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PawMedic </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- <h1>PAWMEDIC</h1> -->
+        <img src="img/logo pawMedic putih.png" alt="logo">
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="index.html ">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Konten Utama -->
+    <section class="janjiTemu">
+        <h2 class="service_title">Appointment Service</h2>
+        <img src="img/janji temu 2.png" alt="janjiTemu-pic">
+        <p>Jadwalkan janji temu dengan dokter hewan </p>
+        <a href="#" class="button" id="pesanButton" onclick="tampilkanFormulir()">Schedule Now</a>
+        <!-- <button id="pesanButton" onclick="tampilkanFormulir()" style="display: inline-block;">Schedule Now</button> -->
+        <!-- <button type="button" onclick="saveToFile()">Simpan ke File</button> -->
+        <!----------FORM JANJI TEMU --------->
+        <form id="orderForm" class="order-form" onsubmit="submitForm(event)">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" name="alamat" required>
+
+            <label for="telepon">Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" title="Inputkan nomor" required>
+
+            <label for="tanggalJanji">Pilih Tanggal Pelayanan:</label>
+            <input type="date" id="tanggalJanji" name="tanggalJanji" required>
+
+            <label for="jenisPelayanan">Pilih Jenis Pelayanan:</label>
+            <select id="jenisPelayanan" name="jenisPelayanan" required>
+                <option value="" disabled selected>Pilih Jenis Pelayanan</option>
+                <option value="konsultasi">Konsultasi</option>
+                <option value="pemeriksaan">Pemeriksaan</option>
+                <option value="perawatan">Perawatan</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/submit" method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" name="alamat" required>
+
+            <label for="telepon">Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" title="Inputkan nomor" required>
+
+            <label for="tanggalJanji">Pilih Tanggal Pelayanan:</label>
+            <input type="date" id="tanggalJanji" name="tanggalJanji" required>
+
+            <label for="jenisPelayanan">Pilih Jenis Pelayanan:</label>
+            <select id="jenisPelayanan" name="jenisPelayanan" required>
+                <option value="" disabled selected>Pilih Jenis Pelayanan</option>
+                <option value="konsultasi">Konsultasi</option>
+                <option value="pemeriksaan">Pemeriksaan</option>
+                <option value="perawatan">Perawatan</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section class="store">
+        <h2 class="service_title">Special Product</h2>'
+        <div class="products-container">
+            <div class="product">
+                <img src="img/obatpaw5.png" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Description of Product 1.</p>
+                <button class="cart-button" onclick="addToCart('Product 1')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="img/obatpaw6.png" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Description of Product 2.</p>
+                <button class="cart-button" onclick="addToCart('Product 2')">Add to Cart</button>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Safriya. Copyright.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header,
+        nav,
+        section,
+        article,
+        aside,
+        footer {
+            display: block;
+        }
+
+        /*  Header */
+        header {
+            background-color: #c92b4c;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            /* text: size adjust 10px;; */
+        }
+
+        /*  Navigasi */
+        nav {
+            background-color: grey;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: whitesmoke;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* -------------- Landing Page -------------- */
+        section {
+            padding: 20px;
+            background-color: whitesmoke;
+            text-align: center;
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #c92b4c;
+                color: white;
+                border: 2px solid #c92b4c;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .home_container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .home_title {
+                font-size: 3rem;
+                color: #c92b4c;
+                margin-bottom: 0.5rem;
+            }
+
+            .home_img {
+                display: block;
+                max-width: 500px;
+                margin-bottom: 13px;
+            }
+
+
+            /* -----------------SLIDE--------------- */
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /*slideshow container*/
+            .slideshow-container {
+                max-width: 1000px;
+                height: auto;
+                position: relative;
+                margin: auto;
+            }
+
+            /*--hide the image by : default--*/
+
+            .mySlides {
+                display: none;
+            }
+
+            /*Next & Previous button*/
+
+            .prev,
+            .next {
+                display: inline-block;
+                background-color: #c92b4c;
+                cursor: pointer;
+                position: absolute;
+                top: 100%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 13px;
+                transition: 0.6s ease;
+                border-radius: 3px 0 0 3px;
+                user-select: none;
+
+            }
+
+            /*Position the next button to the right*/
+            .next {
+                right: 13px;
+                ;
+
+            }
+
+            .prev {
+                left: 13px;
+
+            }
+
+            /*on hover, add a black baground color with a little bit see-through*/
+            .prev:hover,
+            .next:hover {
+                background-color: var(--first-color);
+                color: #fff;
+            }
+
+            /*number text (1/3 atc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+
+            }
+
+            /*the dots/bullets/indikator*/
+            .dots {
+                cursor: pointer;
+                height: 8px;
+                width: 8px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: backrground-colour 0.6s ease;
+            }
+
+            .active,
+            .dots:hover {
+                background-color: #717171;
+
+            }
+
+            /*fadding animation*/
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 0.5s;
+
+            }
+
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            /* -------------------- FORMULIR ----------------- */
+            form {
+                display: none;
+            }
+
+            .order-form {
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #f5f5f5;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(137, 14, 14, 0.137);
+            }
+
+            /*  formulir input */
+            .order-form input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+
+            button {
+                margin-top: 10px;
+                color: white;
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+                background-color: #c92b4c;
+                border: 2px solid #c92b4c;
+            }
+
+            select {
+                margin-top: 10px;
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            /* Gaya formulir tombol submit */
+            .order-form button {
+                display: block;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            h1 {
+                color: #c92b4c;
+                /* text-align: center; */
+            }
+
+            /* .btn_schedule {
+                display: inline-block;
+                background-color: #c92b4c;
+                color: white;
+                cursor: pointer;
+            } */
+
+            
+        }
+
+
+        /* -------- STORE ----------- */
+
+        .service-store {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            flex: 0 0 calc(33.33% - 20px);
+            /* Mengatur lebar 33.33% dengan margin 20px */
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cart-button {
+            color: white;
+        }
+
+        .service_title {
+            font-size: 2.5rem;
+            color: #c92b4c;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gaya Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Media Query untuk responsivitas */
+        @media only screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+        }

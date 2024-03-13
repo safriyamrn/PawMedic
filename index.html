@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PawMedic </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- <h1>PAWMEDIC</h1> -->
+        <img src="img/logo pawMedic putih.png" alt="logo">
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="index.html" id="berandaLink" onclick="tampilkanBeranda()">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Konten Utama -->
+    <section class="home" id="home">
+        <div class="slideshow-container">
+    
+            <div class="mySlides fade">
+                <div class="home_container">
+                    <div class="home_data">
+                        <h1 class="home_title">Doxycycline</h1>
+                        <h2 class="home_subtitle">Obat pill kucing ketika si bobby sakit</h2>
+                    </div>
+                    <img src="img/obatpaw1.png" alt="" class="home_img">
+                     <a href="#" class="button">Explore Now</a>
+                </div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="home_container">
+                    <div class="home_data">
+                        <h1 class="home_title">Prednisone</h1>
+                        <h2 class="home_subtitle">Salah satu obat flu terkenal yang ampuh mengatasi flu berat</h2>
+                       
+                    </div>
+                    <img src="img/obatpaw2.png" alt="" class="home_img">
+                    <a href="#" class="button">Explore Now</a>
+                </div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="home_container">
+                    <div class="home_data">
+                        <h1 class="home_title">Baytril</h1>
+                        <h2 class="home_subtitle">Obat ini untuk mengatasi kucing anda agar nafsu makan bertambah</h2>
+                        
+                    </div>
+                    <img src="img/obatpaw3.png" alt="" class="home_img">
+                    <a href="#" class="button">Explore Now</a>
+                </div>
+            </div>
+    
+        </div>
+        <br>
+    
+        <!-- Tombol Next dan Previous -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!-- Titik/Tanda bulatan -->
+    <div style="text-align: center">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        </div>
+        <script src="js/slide.js"></script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Safriya. Copyright.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
