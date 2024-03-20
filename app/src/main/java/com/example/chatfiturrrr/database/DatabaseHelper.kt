@@ -1,9 +1,11 @@
 package com.example.chatfiturrrr.database
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.chatfiturrrr.model.User
 
 class DatabaseHelper (private val context: Context?) : SQLiteOpenHelper(
     context, DATABASE_NAME, null, DATABASE_VERSION
@@ -56,5 +58,23 @@ class DatabaseHelper (private val context: Context?) : SQLiteOpenHelper(
         val userExists = cursor.count > 0
         cursor.close()
         return userExists
+    }
+    @SuppressLint("Range")
+    fun getAllUsers(): MutableList<User> {
+        val userList = mutableListOf<User>()
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+        cursor.use {
+            while (it.moveToNext()) {
+                val id = it.getInt(it.getColumnIndex(COLUMN_ID))
+                val username = it.getString(it.getColumnIndex(COLUMN_USERNAME))
+                val email = it.getString(it.getColumnIndex(COLUMN_EMAIL))
+                val password = it.getString(it.getColumnIndex(COLUMN_PASSWORD))
+                val user = User(id, username, email, password)
+                userList.add(user)
+            }
+        }
+        return userList
     }
 }
