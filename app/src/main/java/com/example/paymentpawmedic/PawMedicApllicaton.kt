@@ -1,4 +1,8 @@
 package com.example.paymentpawmedic
 
-class PawMedicApllicaton {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class PawMedicApllicaton: Application() {
 }

@@ -42,7 +42,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.paymentpawmedic.data.Currency
+import com.example.paymentpawmedic.presentation.common.Currency
 import com.example.paymentpawmedic.ui.theme.LightRed
 
 val currencies = listOf(
