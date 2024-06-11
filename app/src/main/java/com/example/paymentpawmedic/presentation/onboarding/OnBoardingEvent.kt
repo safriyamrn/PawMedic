@@ -1,4 +1,6 @@
 package com.example.paymentpawmedic.presentation.onboarding
 
-class OnBoardingEvent {
+sealed class OnBoardingEvent {
+    object  SaveAppEntry: OnBoardingEvent()
+
 }

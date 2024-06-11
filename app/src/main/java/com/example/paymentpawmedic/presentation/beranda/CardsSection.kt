@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.paymentpawmedic.R
-import com.example.paymentpawmedic.data.Card
+import com.example.paymentpawmedic.presentation.common.Card
 import com.example.paymentpawmedic.ui.theme.DarkRed
 
 
@@ -69,8 +69,9 @@ fun getGradient(
 @Composable
 fun CardsSection() {
     LazyRow {
-        items(cards.size) { index ->
+        items(cards.size ) { index ->
             CardItem(index)
+
         }
     }
 }

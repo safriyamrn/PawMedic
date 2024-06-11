@@ -25,10 +25,11 @@ import com.example.paymentpawmedic.presentation.common.PawTextButton
 import com.example.paymentpawmedic.presentation.onboarding.components.OnBoardingPage
 import com.example.paymentpawmedic.presentation.onboarding.components.PageIndicator
 import kotlinx.coroutines.launch
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    event: (OnBoardingEvent) -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {
             pages.size
@@ -38,7 +39,8 @@ fun OnBoardingScreen() {
             derivedStateOf {
                 when (pagerState.currentPage) {
                     0 -> listOf("", "Next")
-                    1 -> listOf("Back", "Get Started")
+                    1 -> listOf("Back", "Next")
+                    2 -> listOf("Back","Get Started")
                     else -> listOf("", "")
 
                 }
@@ -66,45 +68,44 @@ fun OnBoardingScreen() {
             )
 
 
-        Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
 
-            val scope = rememberCoroutineScope()
-            if (buttonState.value[0].isNotEmpty()) {
-                PawTextButton(
-                    text = buttonState.value[0],
-                    onClick = {
-                        scope.launch {
-                            pagerState.animateScrollToPage(page = pagerState.currentPage - 1)
-                        }
+                val scope = rememberCoroutineScope()
 
-                    }
-
-                )
-            }
-            PawButton(
-                text = buttonState.value[1],
-                onClick = {
-
-                    scope.launch {
-                        if (pagerState.currentPage == 2) {
-                            //TODO: Navigate to Home Screen
-                        } else {
-                            pagerState.animateScrollToPage(
-                                page = pagerState.currentPage + 1
-                            )
+                if (buttonState.value[0].isNotEmpty()) {
+                    PawTextButton(
+                        text = buttonState.value[0],
+                        onClick = {
+                            scope.launch {
+                                pagerState.animateScrollToPage(page = pagerState.currentPage - 1)
+                            }
 
                         }
 
-                    }
+                    )
                 }
-            )
+                PawButton(
+                    text = buttonState.value[1],
+                    onClick = {
 
-        }
-            
+                        scope.launch {
+                            if (pagerState.currentPage == 2) {
+                                event(OnBoardingEvent.SaveAppEntry)
+
+                            } else {
+                                pagerState.animateScrollToPage(
+                                    page = pagerState.currentPage + 1
+                                )
+
+                            }
+
+                        }
+                    }
+                )
+
+            }
+
         }
         Spacer(modifier = Modifier.weight(0.5f))
     }
 }
-
-
-

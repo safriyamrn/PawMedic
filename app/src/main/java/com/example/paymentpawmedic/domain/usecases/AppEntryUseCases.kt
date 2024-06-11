@@ -1,6 +1,6 @@
 package com.example.paymentpawmedic.domain.usecases
 
-data class AppnEntryUseCases (
+data class AppEntryUseCases (
     val readAppEntry: ReadAppEntry,
     val saveAppEntry: SaveAppEntry
 )
